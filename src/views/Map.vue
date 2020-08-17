@@ -47,6 +47,7 @@ export default{
 			this.ajax('get', this.api.queryAllBlog, 'tag='+tag, res => {
 				// console.log(res.data);
 				this.blogList = res.data;
+				this.$store.commit('updBlog',{blogs: this.blogList});
 			})
 		},
 		getTags(){
@@ -58,12 +59,19 @@ export default{
 	created() {
 		this.getAllBlog(this.tag);
 		this.getTags();
+		setInterval(() => {
+			if (this.$store.state.keyWordsSearchFlag) {
+				this.blogList = this.$store.state.blogList || [];
+			}
+		}, 1500)
 	}
 }
 </script>
 
 <style scoped lang="less">
 	.flex-wrap{
+		min-height: calc(100vh - 155px);
+		box-sizing: border-box;
 		.content{
 			h4, h3{
 				padding-bottom: 10px;

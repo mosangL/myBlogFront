@@ -59,6 +59,7 @@
 					}, res => {
 						// console.log(res);
 						this.articleList = res.data || [];
+						this.$store.commit('updBlog',{blogs: this.articleList});
 					})
 				}
 			},
@@ -75,6 +76,11 @@
 		created() {
 			this.getList(+this.page, this.limit); 
 			this.getCount(); 
+			setInterval(() => {
+				if (this.$store.state.keyWordsSearchFlag) {
+					this.articleList = this.$store.state.blogList || [];
+				}
+			}, 1500)
 		},
 		filters:{
 			parseTime
@@ -88,34 +94,28 @@
 	}
 	#blogs .panel-wrap {
 		padding-top: 20px;
-
 		.panel {
-
 			.panel-body {
 				background-color: #fff;
 				color: #424242;
 				padding: 15px;
-
 				h2 {
 					font-weight: normal;
 					margin: 5px 0;
 				}
-
 				.description {
 					font-size: 16px;
 					word-break: break-word;
 					word-wrap: break-word;
 					overflow: hidden;
+					max-height: 265px;
 				}
 			}
-
-
 			.panel-footer {
 				color: #eee;
 				border-top: #bfbfbf;
 				background-color: #1f1f1f;
 				padding: 5px 15px;
-
 			}
 		}
 	}

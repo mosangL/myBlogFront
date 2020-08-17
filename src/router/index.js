@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+// import fr from "element-ui/src/locale/lang/fr";
 
 Vue.use(VueRouter);
 
@@ -42,5 +43,11 @@ const router = new VueRouter({
 	base: process.env.BASE_URL,
 	routes
 });
+
+// 全局守卫
+// router.beforeEach((to, from, next) => {
+// 	document.title = to.meta.title || 'myBlog';
+// 	next();
+// });
 
 export default router;

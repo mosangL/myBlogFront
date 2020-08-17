@@ -1,4 +1,4 @@
-const baseApi = 'http://127.0.0.1:12306/';
+const baseApi = 'http://127.0.0.1:8080/';
 
 function ajax(method, url, dataObj, callback) {
 	let xhr = null;

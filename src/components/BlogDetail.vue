@@ -67,7 +67,7 @@
 		watch:{
 			//监听路由是否变化
 			'$route' (to, from) { 
-				console.log(to.params.id != from.params.id);
+				// console.log(to.params.id != from.params.id);
 				if(to.params.id != from.params.id){
 					this.id = to.params.id;
 					this.getBlogDetail();

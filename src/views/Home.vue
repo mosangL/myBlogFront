@@ -26,6 +26,13 @@
 	import Tags from '@/components/home/Tags.vue';
 	export default {
 		name: 'Home',
+		beforeRouteEnter(to, from, next){
+			if (to.query.to == 'edit') {
+				next({name: 'Edit'})
+			} else {
+				next();
+			}
+		},
 		components: {
 			Bolg,
 			EveryDay,

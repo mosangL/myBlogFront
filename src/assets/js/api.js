@@ -15,4 +15,5 @@ module.exports = {
 	queryBlogByViews: 'queryBlogByViews', // 最近热门博客
 	updateBlogViews: 'updateBlogViews', // 更新博客浏览次数
 	queryAllBlog: 'queryAllBlog',
-}
+	queryBlogByKeyWord: 'queryBlogByKeyWord', // 点击header关键字查找博客
+};

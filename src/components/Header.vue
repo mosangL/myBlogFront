@@ -14,14 +14,34 @@
 				</ul>
 			</nav>
 			<div class="search">
-				<input type="search" placeholder="输入关键词查找">
-				<!-- <el-button type="primary" icon="el-icon-search">搜索</el-button> -->
-				<button><i class="el-icon-search"></i>搜索</button>
+				<input type="search" placeholder="输入关键词查找" v-model.trim="keyWords">
+				<button @click="search"><i class="el-icon-search"></i>搜索</button>
 			</div>
 		</div>
 		
 	</header>
 </template>
+
+<script>
+	export default {
+		data(){
+			return {
+				keyWords: '',
+			}
+		},
+		watch:{
+			//监听路由是否变化
+			'$route' (to, from) { 
+				this.keyWords = '';
+			}
+		},
+		methods: {
+			search(){
+				this.$store.dispatch('queryBlogByKeyWord', this.keyWords);
+			}
+		}
+	}
+</script>
 
 <style lang="less" scoped>
 	@activeColor: #00c1de;

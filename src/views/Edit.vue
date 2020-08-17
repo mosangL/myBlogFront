@@ -44,7 +44,7 @@
 				title: '',
 				tags: '',
 				type: '2',
-				pw: '1234567',
+				pw: '',
 				container: '',
 			}
 		},
@@ -101,7 +101,8 @@
 		min-width: 600px;
 		display: inline-block;
 		padding: 30px 0 10px;
-
+		min-height: calc(100vh - 155px);
+		box-sizing: border-box;
 	}
 
 	.edit-blog .el-form-item:first-child {
