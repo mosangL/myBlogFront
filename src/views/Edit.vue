@@ -67,7 +67,7 @@
 				console.log(this.container)
 				if (this.type == 1) { //编辑博客
 					this.ajax('post', this.api.editBlog, {
-						blog_container: this.container, //content必须放在开头传
+						blog_container: encodeURIComponent(this.container), //content必须放在开头传
 						blog_pw: this.pw.trim(),
 						tags: this.tags,
 						title: this.title,
@@ -79,7 +79,7 @@
 					})
 				} else { //每日一句
 					this.ajax('post', this.api.editEveryDay, {
-						blog_container: this.container,
+						blog_container: encodeURIComponent(this.container),
 						blog_pw: this.pw.trim()
 					}, res => {
 						// console.log(res);
