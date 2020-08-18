@@ -19,7 +19,7 @@
 				</el-form-item>
 				<el-form-item label="">
 					<el-col :span="7">
-						<el-input placeholder="验证码 (注意大小写)" v-model.trim="vcode"></el-input>
+						<el-input placeholder="验证码" v-model.trim="vcode"></el-input>
 					</el-col>
 					<el-col :span="7" :offset="1">
 						<span v-html="codeImg" @click="getCodeImg"></span>
@@ -49,7 +49,8 @@
 					email: '',
 					content: '',
 					reply: '0', //0表示直接评论博客不是回复某人的评论, 若是回复某人，就取某人的名字
-				}
+				},
+				
 			}
 		},
 		computed:{
@@ -58,7 +59,7 @@
 					this.ajax('post', this.api.queryRandomCode, '', res => {
 						// console.log(res);
 						this.codeImg = res.data? res.data.data : '';
-						this.rightCode = res.data? res.data.text : '';
+						this.rightCode = res.data? res.data.text.toLocaleLowerCase() : '';
 					})
 				}
 			}
@@ -73,7 +74,15 @@
 			},
 			//点击提交
 			onSubmit() {
-				if(this.vcode != this.rightCode){
+				if(!this.formInline.content.trim()){
+					this.$alert("请输入内容");
+					return;
+				}
+				if(!this.vcode){
+					this.$alert("请输入验证码");
+					return;
+				}
+				if(this.vcode.toLocaleLowerCase() != this.rightCode){
 					this.$alert("验证码错误，请重新输入");
 					return;
 				}

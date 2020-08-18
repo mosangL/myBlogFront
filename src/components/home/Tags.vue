@@ -5,7 +5,7 @@
 			随机标签云
 		</header>
 		<div class="tags">
-			<router-link v-for="(tag, index) in tags" :key="tag.id" tag="span" to="/" :style="{color: randomColor(), fontSize: randomSize()}">{{tag.tag}}</router-link>
+			<span v-for="tag in tags" :key="tag.id" :style="{color: randomColor(), fontSize: randomSize()}" @click="queryBlogsByTag(tag.tag)">{{tag.tag}}</span>
 		</div>
 	</article>
 </template>
@@ -16,6 +16,16 @@ export default{
 		return{
 			fontSize:'12px',
 			tags: [],
+		}
+	},
+	methods:{
+		queryBlogsByTag(tag){
+			this.ajax('get', this.api.queryAllBlog, 'tag=' + tag, res => {
+				this.$store.commit('updBlog',{blogs: res.data, keyWordsSearchFlag: true});
+				if (!this.$router) {
+					this.$router.push('/')
+				}
+			})
 		}
 	},
 	computed:{

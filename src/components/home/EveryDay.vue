@@ -1,9 +1,9 @@
 <template>
 	<div class="every-day">
 
-		<span class="quote-headtips" style="color: rgb(175, 19, 72);">
+		<span class="quote-headtips neon-lights">
 			每日一句 ( 202082 ) &nbsp;
-			<span class="glyphicon"></span>
+			<span class="glyphicon" @click="speak"></span>
 		</span>
 		<div v-html="getContent" class="every-day-content"></div>
 		
@@ -18,12 +18,23 @@
 			}
 		},
 		methods: {
-
+			//H5 语音合成播报功能
+			speak(){
+				if(!('speechSynthesis' in window)) {
+					this.$alert("对不起，您的浏览器不支持H5语音转换");
+					return;
+				}
+				let _play = document.querySelector(".every-day-content");
+				let to_speak = new SpeechSynthesisUtterance(_play.innerText);
+				//to_speak.rate = 1.4;// 设置播放语速，范围：0.1 - 10之间
+				window.speechSynthesis.speak(to_speak);
+			}
 		},
 		computed: {
 			getContent(){
 				return this.content;
-			}
+			},
+			
 		},
 		created() {
 			//请求数据给content赋值
@@ -32,7 +43,15 @@
 				if(res){
 					this.content = res.data[0].content;
 				}
-			})
+			});
+			
+			// setInterval( ()=> {
+			// 	//175, 19, 72
+			// 	let red = Math.random() * 255 + 175;
+			// 	let green = Math.random() * 255 + 19;
+			// 	let blue = Math.random() * 255 + 72;
+			// 	this.changeColor = 'rgb('+red+','+green+','+blue+')';
+			// }, 500)		
 		}
 	}
 </script>
@@ -51,6 +70,7 @@
 
 	.quote-headtips {
 		margin-top: 3px;
+		color: rgb(175, 19, 72);
 	}
 
 	.glyphicon::before {

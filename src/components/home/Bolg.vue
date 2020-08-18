@@ -2,7 +2,7 @@
 	<div id="blogs">
 		<!-- 博客 -->
 		<div class="panel-wrap">
-			<div class="panel" v-for="(item, index) in articleList" :key="item.id">
+			<div class="panel" v-for="item in articleList" :key="item.id">
 				<div class="panel-body">
 					<router-link tag="h2" :to="{name: 'blogDetail',params:{id:item.id}}" class="hover-blue">{{item.title}}</router-link> 
 					<p class="description" v-html="item.content"></p>
@@ -10,6 +10,7 @@
 
 				<div class="panel-footer">发布于{{new Date(+item.ctime*1000).toLocaleDateString().replace(/\//g,"-")}}&nbsp;&nbsp; | &nbsp;&nbsp; 浏览({{item.views}})&nbsp;&nbsp; | &nbsp;&nbsp;Tags：{{item.tags.replace(/,/, ", ")}}</div>
 			</div>
+			<div class="noData" v-if="articleList.length == 0" align="center"><br>暂无相关数据</div>
 		</div>
 		<!-- 分页 -->
 		<div class="block">
@@ -34,7 +35,7 @@
 		data() {
 			return {
 				page:1,//当前页
-				limit:7, //每页展示的条数
+				limit:3, //每页展示的条数
 				totalCount:0,//总条数
 				articleList: [],
 			}
@@ -46,6 +47,7 @@
 			changePage(val){
 				this.page = val;
 				this.getList(+this.page, this.limit); 
+				window.scrollTo(0, 0);
 			},
 			
 		},
@@ -79,6 +81,7 @@
 			setInterval(() => {
 				if (this.$store.state.keyWordsSearchFlag) {
 					this.articleList = this.$store.state.blogList || [];
+					this.totalCount = this.articleList.length || 0;
 				}
 			}, 1500)
 		},
@@ -108,7 +111,7 @@
 					word-break: break-word;
 					word-wrap: break-word;
 					overflow: hidden;
-					max-height: 265px;
+					max-height: 206px;
 				}
 			}
 			.panel-footer {

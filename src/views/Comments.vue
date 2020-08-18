@@ -4,8 +4,8 @@
 			<div class="left">
 				<article>
 					<div class="text">
-						<p>欢迎灌水交流，别看我长时间不发博，博主可一直都在线~</p> &nbsp;<p class="red">友链只交换技术类个人博客或相关行业。博客长期稳定在线，所以也需要你的站尽量稳定，三天两头打不开的我会直接删除友链不再做通知。</p>
-						<p class="red">博主Q联系:MzcxNjA0Nzg1</p> &nbsp;
+						<p>新开博，欢迎灌水交流~</p>
+						<p class="red">博主Q联系: 1393726367</p>
 					</div>
 				</article>
 				<!-- 留言区，-1指的是网站作者自己的id -->

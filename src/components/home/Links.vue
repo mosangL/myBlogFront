@@ -4,45 +4,34 @@
 		<table class="table friendship-link">
 			<tbody>
 				<tr>
-					<td><a href="http://www.xiaopeiqing.com/" title="挨踢茶馆" target="_blank">挨踢茶馆</a></td>
-					<td><a href="https://hongzx.cn/" title="佛布朗斯基，一只90后的程序猿" target="_blank">佛布朗斯基</a></td>
+					<td><a href="https://www.npmjs.com/package/vue-cli" title="vue-cli" target="_blank">Vue-cli</a></td>
+					<td><a href="https://www.eolinker.com/#/" title="EOLINKER接口管理" target="_blank">EOLINKER接口管理</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://www.k2zone.cn/" title="kTWO个人博客属于原创个人博客网站" target="_blank">kTWO博客</a></td>
-					<td><a href="http://www.lizenghai.com/" title="lizenghai's blog" target="_blank">Lizenghai's Blog</a></td>
+					<td><a href="https://codepen.io/search/pens?q=canvas&page=1&order=popularity&depth=everything" title="CodePen" target="_blank">CodePen</a></td>
+					<td><a href="https://developer.aliyun.com/mirror" title="阿里巴巴镜像站" target="_blank">阿里巴巴镜像站</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://www.wonxun.net/" title="网讯IT资讯" target="_blank">网讯IT资讯</a></td>
-					<td><a href="http://www.dockerinfo.net/" title="docker技术网站" target="_blank">docker技术网站</a></td>
+					<td><a href="https://stackoverflow.com/" title="Stack Overflow - 分享社区" target="_blank">Stack Overflow</a></td>
+					<td><a href="http://browserify.org/" title="Browserify" target="_blank">Browserify</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://www.yusure.cn/" title="Yusure's Blog" target="_blank">Yusure的个人博客</a></td>
-					<td><a href="http://www.023xs.cn/" title="小张个人博客" target="_blank">小张个人博客</a></td>
+					<td><a href="http://css.doyoe.com/" title="CSS参考手册" target="_blank">CSS参考手册</a></td>
+					<td><a href="https://github.com/pyenv/pyenv" title="GitHub-pyenv 多版本控制工具" target="_blank">GitHub-pyenv</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://www.youzitool.com/" title="柚子工具" target="_blank">柚子工具</a></td>
-					<td><a href="https://www.lujianxin.com/" title="陆鉴鑫的博客" target="_blank">陆鉴鑫的博客</a></td>
+					<td><a href="https://pypi.org/" title="PyPI" target="_blank">PyPI</a></td>
+					<td><a href="https://www.nowcoder.com/" title="牛客网" target="_blank">牛客网</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://www.xuecaijie.com/" title="薛才杰个人博客" target="_blank">薛才杰个人博客</a></td>
-					<td><a href="http://www.tennfy.com/" title="TENNFY" target="_blank">TENNFY</a></td>
+					<td><a href="https://www.html.cn/" title="html中文网" target="_blank">html中文网</a></td>
+					<td><a href="https://echarts.baidu.com/option.html#title" title="ECharts样式设置" target="_blank">ECharts样式设置</a></td>
 				</tr>
 				<tr>
-					<td><a href="https://blog.51qwj.xyz" title="萌新blog" target="_blank">萌新blog</a></td>
-					<td><a href="http://www.hxinq.com/" title="黄信强个人博客" target="_blank">黄信强个人博客</a></td>
+					<td><a href="http://www.w3school.com.cn/html5/index.asp" title="W3school" target="_blank">W3school</a></td>
+					<td><a href="https://www.58pic.com/" title="ECharts样式设置" target="_blank">千图网</a></td>
 				</tr>
-				<tr>
-					<td><a href="https://easyai.tech" title="easyAI人工智能" target="_blank">easyAI人工智能</a></td>
-					<td><a href="http://www.ydongxue.cn" title="冬雪。的博客" target="_blank">冬雪。</a></td>
-				</tr>
-				<tr>
-					<td><a href="http://www.liqinglin0314.com/" title="李庆林个人博客" target="_blank">李庆林个人博客</a></td>
-					<td><a href="https://xujd.top/" title="丁D博客" target="_blank">丁D博客</a></td>
-				</tr>
-				<tr>
-					<td><a href="https://www.v2fy.com/" title="猫爪导航" target="_blank">猫爪导航</a></td>
-					<td><a href="http://www.gjxblog.com" title="GJX博客" target="_blank">GJX博客</a></td>
-				</tr>
+				
 			</tbody>
 		</table>
 	</div>

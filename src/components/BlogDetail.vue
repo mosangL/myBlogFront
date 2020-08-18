@@ -28,14 +28,24 @@
 					</article>
 				</div>
 				<!-- 留言区 -->
-				<CommentsList :blog_id="id" v-if="hackReset == true"/>
+				<CommentsList :blog_id="id" v-if="hackReset == true" />
 				<!-- 发表评论 -->
-				<PostComment :blog_id="id" @addNewComment="upDataComment"/>
+				<PostComment :blog_id="id" @addNewComment="upDataComment" />
 			</div>
 			<div class="right">
 				<Tags />
 				<HotBlogs />
 				<NewComments />
+				<!-- 回到顶部 -->
+				<el-backtop :bottom="120" style="{
+					height: 40px;
+					width: 40px;
+					background-color: #f2f5f6;
+					box-shadow: 0 0 6px rgba(0,0,0, .12);
+					text-align: center;
+					line-height: 40px;
+					color: #1989fa;
+				}">UP</el-backtop>
 			</div>
 		</div>
 
@@ -64,11 +74,11 @@
 				hackReset: true,
 			}
 		},
-		watch:{
+		watch: {
 			//监听路由是否变化
-			'$route' (to, from) { 
+			'$route'(to, from) {
 				// console.log(to.params.id != from.params.id);
-				if(to.params.id != from.params.id){
+				if (to.params.id != from.params.id) {
 					this.id = to.params.id;
 					this.getBlogDetail();
 					this.upDateViews();
@@ -80,18 +90,18 @@
 			// console.log(this.id);
 			this.getBlogDetail();
 			this.upDateViews();
-			
+
 		},
-		methods:{
+		methods: {
 			//跟新留言板块
-			upDataComment(){
+			upDataComment() {
 				this.hackReset = false;
 				this.$nextTick(() => {
 					this.hackReset = true;
 				});
 			},
 			// 获取博客内容详情
-			getBlogDetail(){
+			getBlogDetail() {
 				this.ajax('post', this.api.getBlogDetail, "id=" + this.id, res => {
 					// console.log(res.data);
 					if (res) {
@@ -103,9 +113,9 @@
 				});
 			},
 			//更新博客浏览次数
-			upDateViews(){ 
+			upDateViews() {
 				setTimeout(() => {
-					if(this.detail.id){
+					if (this.detail.id) {
 						this.ajax('post', this.api.updateBlogViews, {
 							blog_id: this.detail.id,
 							views: this.detail.views + 1
@@ -116,7 +126,7 @@
 				}, 2000);
 			}
 		},
-		filters:{
+		filters: {
 			parseTime
 		}
 	}
@@ -157,13 +167,16 @@
 				padding: 15px 0;
 				border-top: 1px solid #b9b9b9;
 				text-align: left;
+
 				img {
 					border-radius: 4px;
 					overflow: hidden;
 					max-width: 100%;
 					margin: 10px;
 				}
-				p, div{
+
+				p,
+				div {
 					text-align: left;
 				}
 

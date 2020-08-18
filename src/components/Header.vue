@@ -38,6 +38,7 @@
 		methods: {
 			search(){
 				this.$store.dispatch('queryBlogByKeyWord', this.keyWords);
+				window.scrollTo(0, 0);
 			}
 		}
 	}

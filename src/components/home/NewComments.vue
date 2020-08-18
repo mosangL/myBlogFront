@@ -4,7 +4,7 @@
 		<ul>
 			<li v-for="(item, index) in commentlists" :key="index">
 				<div>{{item.user_name}}<span class="ctime">{{new Date(+item.ctime*1000).toLocaleDateString().replace(/\//g,"-")}}</span></div>
-				<div class="des hover-blue">{{item.comments}}</div>
+				<div class="des">{{item.comments}}</div>
 			</li>
 		</ul>
 	</div>

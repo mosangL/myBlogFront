@@ -73,6 +73,7 @@
 				width: 100vw;
 				top: 0;
 				left: 0;
+				z-index: 10;
 			}
 			//小容器
 			.panel{
@@ -109,7 +110,19 @@
 					border-bottom-right-radius: 4px;
 				}
 			}
-				
+			// 霓虹灯字体效果
+			.neon-lights{
+				animation: changeColor 5s infinite; 
+				-webkit-animation: changeColor 5s infinite;
+				animation-direction: alternate; /*是否循环交替反向播放动画*/ 
+			}
+			@keyframes changeColor{
+				0% {color: rgb(175, 19, 72);}  
+				25% {color: rgb(205, 105, 172);}  
+				50% {color: rgb(175, 120, 200);}  
+				75% {color: rgb(105, 100, 200);}  
+				100% {color: rgb(170, 200, 102);}  
+			}  	
 		}
 	}
 	
