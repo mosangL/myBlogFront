@@ -2,7 +2,7 @@
 	<header class="body-header">
 		<div class="nav-box">
 			<router-link to="/" class="logo">
-				<span class="title">肖小年个人博客</span>
+				<span class="title">XX的个人博客</span>
 				<span class="alias font16">| 技术博客</span>
 			</router-link>
 			<nav>

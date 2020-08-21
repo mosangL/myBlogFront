@@ -44,14 +44,7 @@
 					this.content = res.data[0].content;
 				}
 			});
-			
-			// setInterval( ()=> {
-			// 	//175, 19, 72
-			// 	let red = Math.random() * 255 + 175;
-			// 	let green = Math.random() * 255 + 19;
-			// 	let blue = Math.random() * 255 + 72;
-			// 	this.changeColor = 'rgb('+red+','+green+','+blue+')';
-			// }, 500)		
+				
 		}
 	}
 </script>
