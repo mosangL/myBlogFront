@@ -1,4 +1,5 @@
-const baseApi = 'http://127.0.0.1:8080/';
+const baseApi = '/';
+// const baseApi = 'http://192.168.146.132:8080/';
 
 function ajax(method, url, dataObj, callback) {
 	let xhr = null;
